@@ -1,3 +1,5 @@
+Copyright 2016 Cloudsource Limited. Licenced under the MIT Licence, see COPYRIGHT File for details.
+
 ThunderMaps API Examples
 ========================
 
