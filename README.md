@@ -8,10 +8,10 @@ This repository contains examples in several different programming languages tha
 Obtaining API Key and Channel ID
 -------
 You can obtain your API Key and Channel ID for any ThunderMaps channel you are allowed to report to by:
-1) Going to https://www.thundermaps.com/control_panel 
-2) Select the channel you want to send reports to from the drop down box on the right
-3) Click the 'Integrations' Tab
-4) Click the 'ThunderBot' Intergration
+1. Going to https://www.thundermaps.com/control_panel 
+2. Select the channel you want to send reports to from the drop down box on the right
+3. Click the 'Integrations' Tab
+4. Click the 'ThunderBot' Intergration
 
 
 API key
