@@ -18,3 +18,8 @@ Channel ID
 In order to send a report you will need to create a channel to submit it to. You can do this at https://www.thundermaps.com/accounts/new.
 
 Once you have your channel ID you will need to replace any occurence of `YOUR CHANNEL ID HERE` in the examples with your channel ID.
+
+Contributors
+----------
+
+If you would like to contribute to this example code, please fork the repository and send through a pull request.
