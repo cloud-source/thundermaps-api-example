@@ -56,5 +56,5 @@ if (require.main === module) {
         category_name: "Shape",
         occurred_on: "2016-04-25T12:00:00Z",
         source_id: "triangle001",
-    })
+    });
 }
