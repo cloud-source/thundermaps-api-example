@@ -5,6 +5,8 @@
 # This script requires the HTTParty library (http://johnnunemaker.com/httparty/) but this can be
 # replaced by another HTTP library if needed.
 #
+# HTTParty can usually be installed via `gem install httparty`.
+#
 
 require 'httparty'
 

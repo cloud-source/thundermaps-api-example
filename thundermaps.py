@@ -4,6 +4,9 @@
 #
 # This script requires the Requests library (http://www.python-requests.org/en/master/) but this can
 # be replaced by another HTTP library if needed.
+#
+# Requests can usually be installed via `pip install requests`.
+#
 
 import json
 

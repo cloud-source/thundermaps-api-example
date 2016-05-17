@@ -5,6 +5,8 @@
 // This script requires the Request library (https://github.com/request/request) but this can be
 // replaced by another HTTP library if needed.
 //
+// Request can usually be installed via `npm install request`.
+//
 
 var request = require("request");
 
