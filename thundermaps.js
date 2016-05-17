@@ -44,15 +44,17 @@ ThunderMaps.prototype.sendReport = function(report) {
 
 module.exports = ThunderMaps;
 
-// Send a sample report to ThunderMaps.
-var thundermaps = new ThunderMaps(THUNDERMAPS_API_KEY, THUNDERMAPS_CHANNEL_ID);
-thundermaps.sendReport({
-	latitude: 33.747252,
-	longitude: -112.633853,
-	address: "N Ogden Rd, Wittmann, AZ 85361",
-	title: "Giant Triangle",
-	description: "A giant triangle in the desert of Arizona",
-	category_name: "Shape",
-	occurred_on: "2016-04-25T12:00:00Z",
-	source_id: "triangle001",
-})
+if (require.main === module) {
+    // Send a sample report to ThunderMaps.
+    var thundermaps = new ThunderMaps(THUNDERMAPS_API_KEY, THUNDERMAPS_CHANNEL_ID);
+    thundermaps.sendReport({
+        latitude: 33.747252,
+        longitude: -112.633853,
+        address: "N Ogden Rd, Wittmann, AZ 85361",
+        title: "Giant Triangle",
+        description: "A giant triangle in the desert of Arizona",
+        category_name: "Shape",
+        occurred_on: "2016-04-25T12:00:00Z",
+        source_id: "triangle001",
+    })
+}
