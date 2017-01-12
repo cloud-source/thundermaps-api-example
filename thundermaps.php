@@ -3,26 +3,30 @@
 //
 // Example PHP script that sends a report to ThunderMaps using the ThunderMaps API.
 //
+// This script requires the php-curl module.
+//
 
 define("THUNDERMAPS_API_KEY", "YOUR API KEY HERE");
 define("THUNDERMAPS_CHANNEL_ID", "YOUR CHANNEL ID HERE");
 
 class ThunderMaps {
 	private $key;
-	private $channel_id;
 
-	public function __construct($key, $channel_id) {
+	public function __construct($key) {
 		$this->key = $key;
-		$this->channel_id = $channel_id;
 	}
 
 	function sendReport($report) {
-		$url = "https://www.thundermaps.com/api/v2/reports";
-		$data = json_encode(array("reports" => array($report)));
-		$params = array("account_id" => $this->channel_id);
-		$headers = array("Authorization: Token token=" . $this->key, "Content-Type: application/json");
+		$url = "https://www.thundermaps.com/api/v4/reports/upsert";
+		$data = json_encode(array("report" => $report));
+		$headers = array(
+            "Authorization: Token token=" . $this->key,
+            "Content-Type: application/json",
+            "X-AppID: com.thundermaps.main",
+            "X-InstallationID: thundermaps-api-" . sha1($this->key),
+        );
 
-		$ch = curl_init($url . "?" . http_build_query($params));
+		$ch = curl_init($url);
 		curl_setopt_array($ch, array(
 			CURLOPT_POST => TRUE,
 			CURLOPT_RETURNTRANSFER => TRUE,
@@ -42,15 +46,15 @@ class ThunderMaps {
 
 if (!debug_backtrace()) {
 	// Send a sample report to ThunderMaps.
-	$thundermaps = new ThunderMaps(THUNDERMAPS_API_KEY, THUNDERMAPS_CHANNEL_ID);
+	$thundermaps = new ThunderMaps(THUNDERMAPS_API_KEY);
 	$thundermaps->sendReport(array(
-		"latitude" => 33.747252,
-		"longitude" => -112.633853,
+        "account_id" => THUNDERMAPS_CHANNEL_ID,
+        "location" => array(
+            "latitude" => 33.747252,
+            "longitude" => -112.633853,
+        ),
 		"address" => "N Ogden Rd, Wittmann, AZ 85361",
-		"title" => "Giant Triangle",
 		"description" => "A giant triangle in the desert of Arizona",
-		"category_name" => "Shape",
-		"occurred_on" => "2016-04-25T12:00:00Z",
 		"source_id" => "triangle001",
 	));
 }
