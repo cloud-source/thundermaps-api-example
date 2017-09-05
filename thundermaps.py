@@ -21,7 +21,7 @@ class ThunderMaps(object):
 		self.key = key
 
 	def send_report(self, report):
-		url = "https://www.thundermaps.com/api/v4/reports/upsert"
+		url = "https://public-api.thundermaps.com/api/v4/reports/upsert"
 		data = json.dumps({"report": report})
 		headers = {
 			"Authorization": "Token token=%s" % self.key,

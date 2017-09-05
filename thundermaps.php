@@ -17,7 +17,7 @@ class ThunderMaps {
 	}
 
 	function sendReport($report) {
-		$url = "https://www.thundermaps.com/api/v4/reports/upsert";
+		$url = "https://public-api.thundermaps.com/api/v4/reports/upsert";
 		$data = json_encode(array("report" => $report));
 		$headers = array(
             "Authorization: Token token=" . $this->key,

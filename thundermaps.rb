@@ -22,7 +22,7 @@ class ThunderMaps
   end
 
   def send_report(report)
-    url = 'https://www.thundermaps.com/api/v4/reports/upsert'
+    url = 'https://public-api.thundermaps.com/api/v4/reports/upsert'
     data = { report: report }.to_json
     headers = {
         'Authorization' => "Token token=#{@key}",
