@@ -20,7 +20,7 @@ function ThunderMaps(key) {
 
 ThunderMaps.prototype.sendReport = function(report) {
     var options = {
-        uri: "https://www.thundermaps.com/api/v4/reports/upsert",
+        uri: "https://public-api.thundermaps.com/api/v4/reports/upsert",
         method: "POST",
         headers: {
             "Authorization": "Token token=" + this.key,
